@@ -1,7 +1,6 @@
 const express = require('express')
 const app = express()
 const indexRouter = require('./routes')
-const helmet = require("helmet")
 
 const timeStamp = (req, res, next) => {
     req.time = new Date()
@@ -9,8 +8,6 @@ const timeStamp = (req, res, next) => {
 }
 
 app.use(timeStamp)
-
-app.use(helmet())
 
 app.use('/', indexRouter)
 
